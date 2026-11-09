@@ -23,3 +23,17 @@ print(agrupado['Habitaciones'].mean())
 # Precios por cantidad de metros cuadrados (USD)
 print(" +-+-+-+ Precio (miles de USD) por cantidad de metros cuadrados +-+-+-+")
 print(agrupado['Precio_Miles_USD'].max())
+
+print(" +-+ Caleb -+-+ Segunda Parte +-+- 0039 +-+")
+print("Agregaciones multiples")
+print("mean --> promedio, sum --> suma")
+print("max --> maximo, min --> minimo")
+resultado_agregado = agrupado['Habitaciones'].agg(['mean', 'sum', 'max', 'min'])
+print(resultado_agregado)
+print("Agrupacion por varias columnas")
+
+print("Agrega columnas al DataFrame")
+print("Columna Team --> Equipo")
+df['Equipo'] = ['A', 'B', 'A', 'B', 'A', 'B']
+agrupado_multiple = df.groupby(['Metros_Cuadrados', 'Equipo'])['Habitaciones'].mean()
+print(agrupado_multiple)
